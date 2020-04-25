@@ -17,3 +17,6 @@ def test_six_returns_fizz():
     
 def test_nine_returns_fizz():
     assert fizzBuzz(9) == 'fizz'
+
+def test_five_returns_buzz():
+    assert fizzBuzz(5) == 'buzz'
