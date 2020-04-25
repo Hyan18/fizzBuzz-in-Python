@@ -26,3 +26,6 @@ def test_ten_returns_buzz():
 
 def test_fifteen_returns_fizzbuzz():
     assert fizzBuzz(15) == 'fizzbuzz'
+
+def test_30_returns_fizzbuzz():
+    assert fizzBuzz(30) == 'fizzbuzz'
