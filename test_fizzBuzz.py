@@ -1,31 +1,19 @@
 from fizzBuzz import fizzBuzz
 
-def test_one_returns_one():
-    assert fizzBuzz(1) == 1
+import pytest
 
-def test_two_returns_two():
-    assert fizzBuzz(2) == 2
+@pytest.mark.parametrize("n", [1, 2, 4, 7, 11])
+def test_returns_number_itself(n):
+    assert fizzBuzz(n) == n
 
-def test_three_returns_fizz():
-    assert fizzBuzz(3) == 'fizz'
+@pytest.mark.parametrize("n", [3, 6, 9, 12, 18])
+def test_has_factor_3_returns_fizz(n):
+    assert fizzBuzz(n) == 'fizz'
 
-def test_four_returns_four():
-    assert fizzBuzz(4) == 4
+@pytest.mark.parametrize("n", [5, 10, 20, 25, 35])
+def test_has_factor_5_returns_buzz(n):
+    assert fizzBuzz(n) == 'buzz'
 
-def test_six_returns_fizz():
-    assert fizzBuzz(6) == 'fizz'
-    
-def test_nine_returns_fizz():
-    assert fizzBuzz(9) == 'fizz'
-
-def test_five_returns_buzz():
-    assert fizzBuzz(5) == 'buzz'
-    
-def test_ten_returns_buzz():
-    assert fizzBuzz(10) == 'buzz'
-
-def test_fifteen_returns_fizzbuzz():
-    assert fizzBuzz(15) == 'fizzbuzz'
-
-def test_30_returns_fizzbuzz():
-    assert fizzBuzz(30) == 'fizzbuzz'
+@pytest.mark.parametrize("n", [15, 30, 45, 60, 75])
+def test_has_factor_15_returns_fizzbuzz(n):
+    assert fizzBuzz(n) == 'fizzbuzz'
